@@ -1,0 +1,112 @@
+using System.Windows;
+using System.Windows.Forms;
+using System;
+
+namespace Lab1
+{
+    class MainForm : Form
+    {
+        // Button b1=new Button();
+        //  TextBox tb1=new TextBox();
+
+        // public MainWindow()
+        //  {
+        Label labelX = new Label();
+        Label labelY = new Label();
+        Label labelZ = new Label();
+
+        TextBox tbX = new TextBox();
+        TextBox tbY = new TextBox();
+        TextBox tbZ = new TextBox();
+
+        Button button = new Button();
+        TextBox tbResult = new TextBox();
+        public MainForm()
+        {
+            InitComponent();
+            tbX.Text = "2,444";
+            tbY.Text = "0,00869";
+            tbZ.Text = "-130,0";
+
+
+        }
+
+        private void InitComponent()
+            {
+            Width = 400;
+            Height = 350;
+            Text = "Lab1";
+            labelX.Top = 30;
+            labelX.Left = 20;
+            labelX.Width = 25;
+            labelX.Text = "X=";
+            labelY.Top = 60;
+            labelY.Left = 20;
+            labelY.Width = 25;
+            labelY.Text = "Y=";
+            labelZ.Top = 90;
+            labelZ.Left = 20;
+            labelZ.Width = 25;
+            labelZ.Text = "Z=";
+            Controls.AddRange(new[] { labelX, labelY, labelZ });
+            tbX.Top = 30;
+            tbX.Left = 50;
+            tbY.Top = 60;
+            tbY.Left = 50;
+            tbZ.Top = 90;
+            tbZ.Left = 50;
+            Controls.AddRange(new[] {tbX,tbY,tbZ});
+            button.Top = 120;
+            button.Left = 20;
+            button.Text = "Calculate";
+            button.Click += new System.EventHandler(button_Click);
+            Controls.Add(button);
+            tbResult.Top = 160;
+            tbResult.Left = 20;
+            tbResult.ReadOnly = true;
+            tbResult.Multiline = true;
+            tbResult.Width = 200;
+            tbResult.Height = 100;
+            Controls.Add(tbResult);
+            }
+        void button_Click(object sender, System.EventArgs e)
+        {
+            double x = double.Parse(tbX.Text);
+            double y = double.Parse(tbY.Text);
+            double z = double.Parse(tbZ.Text);
+            double a = Math.Pow(x, (y + 1)) + Math.Pow(Math.E,(y - 1));
+            double b = 1 + x * Math.Abs(y - Math.Tan(z));
+            double c = 1 + Math.Abs(y - x);
+            double d = Math.Pow(Math.Abs(y - x), 2) / 2 - Math.Pow(Math.Abs(y - x), 3) / 3;
+            double h = a / b * c + d;
+            tbResult.Text = "Lab1" + Environment.NewLine;
+            tbResult.Text = string.Format("h={0:00000e000}", h);
+
+
+        }
+    }
+}
+
+
+
+
+
+using System;
+using System.Windows;
+using System.Windows.Forms;
+
+namespace Lab1
+{
+    class Program
+    {
+        // [STAThread]
+        static void Main()
+        {
+            Application.Run(new MainForm());
+        }
+    }
+}
+
+
+
+

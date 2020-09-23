@@ -1,0 +1,35 @@
+﻿<Window x:Class="DefiniteIntegral.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DefiniteIntegral"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="420" Width="370">
+    <Grid>
+        <Label Content="a = " HorizontalAlignment="Left" Margin="34,114,0,0"
+               VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="b = " HorizontalAlignment="Left" Margin="34,153,0,0"
+            VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="N = " HorizontalAlignment="Left" Margin="34,192,0,0"
+            VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="140,114,0,0"
+               VerticalAlignment="Top" FontSize="18" x:Name="aValue"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="140,153,0,0"
+            VerticalAlignment="Top" FontSize="18" x:Name="bValue"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="140,192,0,0"
+            VerticalAlignment="Top" FontSize="18" x:Name="NValue" RenderTransformOrigin="0.735,0.513"/>
+        <Label Content="Результат = " HorizontalAlignment="Left" Margin="34,272,0,0"
+            VerticalAlignment="Top" FontSize="18" Width="103"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="140,272,0,0"
+            VerticalAlignment="Top" FontSize="18" x:Name="ResultValue"/>
+        <ProgressBar HorizontalAlignment="Left" Height="57" Margin="32,313,0,0"
+                     VerticalAlignment="Top" Width="301" x:Name="progressBar"/>
+        <Button Content="Ввведите a, b, N" HorizontalAlignment="Left" Margin="34,82,0,0"
+                VerticalAlignment="Top" Width="301" Click="inputDialog_Click" Height="32"/>
+        <Button Content="Посчитать" HorizontalAlignment="Left" Margin="34,231,0,0"
+            VerticalAlignment="Top" Width="301" Click="Calculate_Click"
+                x:Name="CalcBtn" Height="31"/>
+
+    </Grid>
+</Window>

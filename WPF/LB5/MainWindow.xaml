@@ -1,0 +1,58 @@
+﻿<Window x:Class="CernelRun.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CernelRun"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize" WindowState="Maximized"
+        Title="Kernel Game" x:Name="w">
+    <Window.InputBindings>
+        <KeyBinding Key="{Binding SpeedUpCommand.GestureKey}" Command="{Binding SpeedUpCommand}"/>
+        <KeyBinding Key="{Binding SpeedDownCommand.GestureKey}" Command="{Binding SpeedDownCommand}"/>
+        <KeyBinding Key="{Binding FireCommand.GestureKey}" Command="{Binding FireCommand}"/>
+        <KeyBinding Key="{Binding UpRunCommand.GestureKey}" Command="{Binding UpRunCommand}"/>
+        <KeyBinding Key="{Binding DownRunCommand.GestureKey}" Command="{Binding DownRunCommand}"/>
+    </Window.InputBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"></RowDefinition>
+            <RowDefinition Height="0.05*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="0" Background="#48424C">
+            <ToolBar Background="#48424C" Foreground="White">
+                <Button x:Name="Btnkeys" Foreground="White" Margin="5 0 10 3" Content="Keys" Click="Btnkeys_Click"></Button>
+                <Button x:Name="BtnProgram" Foreground="White" Margin="5 0 10 3" Content="Program" Click="BtnProgram_Click"></Button>
+            </ToolBar>
+        </StackPanel>
+        <DockPanel Grid.Row="1" Background="#3ddadb">
+            <ProgressBar x:Name="pb" HorizontalAlignment="Left" Width="150" Value="12.0" Minimum="10.0" Maximum="30.0" Height="25"/>
+            <Label HorizontalAlignment="Left" x:Name="lb"></Label>
+            <Label Width="200" x:Name="lbShow" HorizontalAlignment="Right"></Label>
+        </DockPanel>
+        <Canvas Grid.Row="2" x:Name="MainCanvas">
+            <local:Cannon x:Name="gun" Canvas.Bottom="0" Canvas.Left="10" Width="250" Height="180" Loaded="gun_Loaded"></local:Cannon>
+            <Ellipse x:Name="ell" Width="150" Height="150">
+                <Ellipse.Fill>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Green" Offset="0" ></GradientStop>
+                        <GradientStop Color="Green" Offset="1" ></GradientStop>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+
+
+                
+
+
+
+
+
+
+
+
+
+            </Ellipse>
+        </Canvas>
+    </Grid>
+</Window>
