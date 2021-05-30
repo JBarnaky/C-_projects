@@ -1,0 +1,22 @@
+﻿<Window x:Class="taxCalc.wTax"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:taxCalc"
+        mc:Ignorable="d"
+        Title="Налоги" Height="296.601" Width="472.521" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+    <Grid Loaded="Grid_Loaded">
+        <DataGrid x:Name="grTaxes" Margin="10,10,90,10" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id_tax}" Header="Код" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding taxName}" Header="Наименование"/>
+                <DataGridTextColumn Binding="{Binding taxPerc}" Header="% Ставка"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Удалить" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="Button_Click"/>
+        <Button Content="Сохранить" Margin="0,46,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="Button_Click_1"/>
+        <Button Content="Закрыть" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>
